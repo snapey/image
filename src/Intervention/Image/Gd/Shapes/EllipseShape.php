@@ -55,7 +55,7 @@ class EllipseShape extends AbstractShape
             imagesetthickness($image->getCore(), $this->border_width);
 
             // gd's imageellipse doesn't respect imagesetthickness so i use imagearc with 359.9 degrees here
-            imagearc($image->getCore(), $x, $y, $this->width, $this->height, 0, 359.99, $border_color->getInt());
+            imagearc($image->getCore(), $x, $y, $this->width, $this->height, 0, 360, $border_color->getInt());
         } else {
             imagefilledellipse($image->getCore(), $x, $y, $this->width, $this->height, $background->getInt());
         }
